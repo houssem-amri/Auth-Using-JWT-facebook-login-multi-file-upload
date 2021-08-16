@@ -1,0 +1,65 @@
+<div class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">data -table </h2>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="example-header">
+            <div>
+                <input class="form-control ng-dirty ng-valid ng-touched" (keyup)="applyFilter($event.target.value)"
+                    placeholder="Commencer la recherche">
+            </div>
+        </div>
+
+        <div class="example-container mat-elevation-z8">
+
+            <mat-table [dataSource]="dataSource" matSort>
+
+                <!-- ID Column -->
+                <ng-container matColumnDef="userName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> userName </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.userName}} </mat-cell>
+                </ng-container>
+
+                <!-- Progress Column -->
+                <ng-container matColumnDef="email">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> email </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="pwd">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>pwd </mat-header-cell>
+                    <mat-cell *matCellDef="let row"> {{row.pwd}} </mat-cell>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="role">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> role </mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        {{row.role}}
+                    </mat-cell>
+                </ng-container>
+
+
+
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;">
+                </mat-row>
+            </mat-table>
+
+            <mat-paginator [pageSizeOptions]="[2, 10, 25, 100]"></mat-paginator>
+        </div>
+
+
+
+
+    </div>
+</div>

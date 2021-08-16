@@ -1,0 +1,77 @@
+<div class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">Ajouter product</h2>
+
+                </div>
+            </div>
+        </div>
+
+
+        <form style="margin-top: 40px;" #addEditProductForm='ngForm' (ngSubmit)="addEditproduct()">
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">nom du produit :</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" placeholder="nom du produit" [(ngModel)]='product.nom'
+                        [ngModelOptions]="{standalone:true}">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">select catégorie :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" [(ngModel)]='product.categorie' [ngModelOptions]="{standalone:true}">
+                        <option>catégorie 1</option>
+                        <option>catégorie 2</option>
+                        <option>catégorie 3</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">prix du produit :</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" placeholder="prix du produit" [(ngModel)]='product.prix'
+                        [ngModelOptions]="{standalone:true}">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> description du produit :</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"
+                        [(ngModel)]='product.description' [ngModelOptions]="{standalone:true}"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group row">
+
+                <label class="col-sm-2 col-form-label">telecharger l'image du product :</label>
+                <div class="col-sm-10">
+                    <button type="button" (click)='filePicker.click()' class=" form-control">
+                        <span style="padding-right: 10%;">cliquez </span> <i class="fa fa-upload"
+                            aria-hidden="true"></i></button>
+                </div>
+                <input type="file" #filePicker (change)='onImageSelected($event)' style="visibility: hidden;"
+                    class="form-control">
+
+
+                <div class="col-md-6">
+                    <img [src]="imagePreview" *ngIf="imagePreview" height="150px" width="150px">
+                </div>
+
+
+            </div>
+
+            <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary py-3 px-5">{{title}} produit</button>
+
+            </div>
+        </form>
+
+
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<!-- Blog Start -->
+<div class="blog blog-page mt-125">
+    <div class="container">
+        <div class="section-header">
+            <p>Consulting products</p>
+            <h2>Latest From Our Consulting products</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4" *ngFor='let p of product'>
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="{{p.image}}" alt="Blog">
+                    </div>
+                    <div class="blog-content">
+                        <h2 class="blog-title">{{p.nom}}</h2>
+                        <div class="blog-meta">
+                            <i class="fa fa-list-alt"></i>
+                            <a href="">{{p.categorie}}</a>
+                            <i class="fa fa-calendar-alt"></i>
+                            <p>{{p.prix}}</p>
+                        </div>
+                        <div class="blog-text">
+                            <p>
+                                {{p.description}}
+                            </p>
+                            <a class="btn" href="">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- Blog End -->
